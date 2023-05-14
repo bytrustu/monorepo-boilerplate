@@ -1,0 +1,8 @@
+{
+  "name": "@yummy/lib",
+  "packageManager": "yarn@3.5.1",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}

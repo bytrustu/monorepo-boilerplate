@@ -1,7 +1,7 @@
 {
   "name": "@yummy/ui",
   "packageManager": "yarn@3.5.1",
-  "main":  "src/index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "lint": "eslint ./src/**/*.{ts,tsx}",
     "prettier:check": "prettier --check ./src",

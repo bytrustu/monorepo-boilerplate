@@ -20,6 +20,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:apps/yummy-client"\
       },\
       {\
+        "name": "lib",\
+        "reference": "workspace:packages/lib"\
+      },\
+      {\
         "name": "@yummy/ui",\
         "reference": "workspace:packages/ui"\
       }\
@@ -29,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@yummy/client", ["workspace:apps/yummy-client"]],\
       ["@yummy/ui", ["workspace:packages/ui"]],\
+      ["lib", ["workspace:packages/lib"]],\
       ["monorepo-boilerplate", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -2787,6 +2792,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["type-check", "npm:0.4.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lib", [\
+        ["workspace:packages/lib", {\
+          "packageLocation": "./packages/lib/",\
+          "packageDependencies": [\
+            ["lib", "workspace:packages/lib"],\
+            ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["locate-path", [\
