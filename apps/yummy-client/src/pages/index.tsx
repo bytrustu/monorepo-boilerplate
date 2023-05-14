@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { BaseButton } from '@yummy/ui';
+import { isEmpty } from '@yummy/lib';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <div>
+          isEmpty: {JSON.stringify(isEmpty('a'))} {JSON.stringify(isEmpty(''))}
+        </div>
         <BaseButton
           onClick={() => {
             console.log('클릭');

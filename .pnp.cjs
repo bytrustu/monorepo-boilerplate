@@ -619,6 +619,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.1.4"],\
             ["@types/react", "npm:18.2.6"],\
             ["@types/react-dom", "npm:18.2.4"],\
+            ["@yummy/lib", "workspace:packages/lib"],\
             ["@yummy/ui", "workspace:packages/ui"],\
             ["eslint", "npm:8.40.0"],\
             ["eslint-config-next", "virtual:652c89f77175c668872542a3ac18326ae1dbd097ccc81c7ea6eb58ea95c264c5ca42f8d132d89567995cf10c3a7928b2313c4d2bba0adc46425016ab992f2490#npm:13.4.2"],\
