@@ -1,3 +1,9 @@
 {
-  "packageManager": "yarn@3.5.1"
+  "name": "monorepo-boilerplate",
+  "packageManager": "yarn@3.5.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
