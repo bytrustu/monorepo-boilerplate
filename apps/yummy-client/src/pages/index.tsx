@@ -1,13 +1,22 @@
-import styles from '@/styles/Home.module.css';
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { isEmpty } from '@yummy/lib';
 import { Button } from '@yummy/ui/src/button/Button';
+import { isEmptyString } from '@yummy/lib/src/utils/string';
+import useStore from '@/store/useStore';
+import styles from '@/styles/Home.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const [user, setUser] = useStore((state) => [state.user, state.setUser]);
+  const [restaurant, setRestaurant] = useStore((state) => [state.restaurant, state.setRestaurant]);
+
+  useEffect(() => {
+    setUser({ name: 'John', email: 'John@gmail.com' });
+    setRestaurant({ name: 'McDonalds' });
+  }, []);
   return (
     <>
       <Head>
@@ -18,9 +27,15 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div>
-          isEmpty: {JSON.stringify(isEmpty('a'))} {JSON.stringify(isEmpty(''))}
+          isEmpty: {JSON.stringify(isEmptyString('a'))} {JSON.stringify(isEmptyString(''))}
         </div>
         <Button label="Hello" />
+        <div>
+          user {user?.email} {user?.name}
+        </div>
+        <div>
+          restaurant {restaurant?.name}
+        </div>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
