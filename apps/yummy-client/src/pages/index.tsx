@@ -2,8 +2,8 @@ import styles from '@/styles/Home.module.css';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { BaseButton } from '@yummy/ui';
 import { isEmpty } from '@yummy/lib';
+import { Button } from '@yummy/ui/src/button/Button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,13 +20,7 @@ export default function Home() {
         <div>
           isEmpty: {JSON.stringify(isEmpty('a'))} {JSON.stringify(isEmpty(''))}
         </div>
-        <BaseButton
-          onClick={() => {
-            console.log('클릭');
-          }}
-        >
-          클릭
-        </BaseButton>
+        <Button label="Hello" />
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
